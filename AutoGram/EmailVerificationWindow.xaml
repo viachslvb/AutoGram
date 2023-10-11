@@ -1,0 +1,19 @@
+﻿<Window x:Class="AutoGram.EmailVerificationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoGram"
+        mc:Ignorable="d"
+        Title="Verification Email" Height="137.388" Width="259.841" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="emailTextBox" Grid.ColumnSpan="2" Height="30" Margin="10,14,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="222" IsReadOnly="True" AutoWordSelection="True" Padding="5,3,5,0"/>
+        <TextBox x:Name="CodeTextBox" HorizontalAlignment="Left" Height="30" Margin="48,54,0,0" VerticalAlignment="Top" Width="62" Padding="5,3,5,0"/>
+        <Label Content="Code:" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Padding="0,5,5,5"/>
+        <Button x:Name="VerifyEmailButton" Content="Verify Email" HorizontalAlignment="Left" Margin="115,54,0,0" VerticalAlignment="Top" Width="117" Grid.ColumnSpan="2" Height="30" Click="VerifyEmailButton_Click"/>
+    </Grid>
+</Window>

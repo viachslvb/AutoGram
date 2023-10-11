@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE6A0D53-E35E-4D08-93FE-780E40F325D4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AutoGram</RootNamespace>
+    <AssemblyName>Instagram</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AutoGram.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Release\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.FFMPEG, Version=2.2.5.0, Culture=neutral, PublicKeyToken=03563089b1be05dd, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Release\AForge.Video.FFMPEG.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor, Version=2.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.2.5.6\lib\net45\ImageProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="Magick.NET-Q16-AnyCPU, Version=7.6.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magick.NET-Q16-AnyCPU.7.6.0.1\lib\net40\Magick.NET-Q16-AnyCPU.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.5.0.23, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.2.0.3\lib\net45\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Sqlite, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Sqlite.Core.2.1.0\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=2.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.2.1.4\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=2.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.2.1.4\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=2.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.2.1.4\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Sqlite, Version=2.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Sqlite.Core.2.1.4\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.1.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.2.0.3\lib\net45\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Proxy, Version=3.0.18072.1009, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleTCP, Version=1.0.24.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleTCP.1.0.24\lib\net45\SimpleTCP.dll</HintPath>
+    </Reference>
+    <Reference Include="Sodium.Core, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sodium.Core.1.2.3\lib\netstandard2.0\Sodium.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green, Version=1.1.11.121, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.11\lib\net45\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=1.1.11.121, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.11\lib\net45\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=1.1.11.121, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.11\lib\net45\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.e_sqlite3, Version=1.1.11.121, Culture=neutral, PublicKeyToken=9c301db686d0bd12, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.provider.e_sqlite3.net45.1.1.11\lib\net45\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Interactive.Async, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Interactive.Async.3.1.1\lib\net46\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Windows.Data">
+      <HintPath>..\..\..\..\..\..\..\Windows\System32\WinMetadata\Windows.Data.winmd</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Windows.Foundation">
+      <HintPath>..\..\..\..\..\..\..\Windows\System32\WinMetadata\Windows.Foundation.winmd</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Utilities\ConsoleCommands.cs" />
+    <Compile Include="Utilities\Email.cs" />
+    <Compile Include="EmailVerificationWindow.xaml.cs">
+      <DependentUpon>EmailVerificationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ExtensionHelper.cs" />
+    <Compile Include="Helpers\InstagramAppComparer.cs" />
+    <Compile Include="Helpers\MessageHelper.cs" />
+    <Compile Include="Helpers\TextRandomizer.cs" />
+    <Compile Include="Helpers\UserFiltrationHelper.cs" />
+    <Compile Include="ImageUnique\BrightnessContrast.cs" />
+    <Compile Include="ImageUnique\ColorBalance.cs" />
+    <Compile Include="ImageUnique\Filter.cs" />
+    <Compile Include="ImageUnique\Image.cs" />
+    <Compile Include="ImageUnique\Imaginary.cs" />
+    <Compile Include="ImageUnique\ImaginaryPlus.cs" />
+    <Compile Include="Instagram\Client.cs" />
+    <Compile Include="Instagram\Constants.cs" />
+    <Compile Include="Instagram\Devices\Device.cs" />
+    <Compile Include="Instagram\Devices\DeviceData.cs" />
+    <Compile Include="Instagram\Devices\UserAgent.cs" />
+    <Compile Include="Instagram\Exception\Http403Exception.cs" />
+    <Compile Include="Instagram\Exception\AccountCreateFailedException.cs" />
+    <Compile Include="Instagram\Exception\AccountCreateLimitException.cs" />
+    <Compile Include="Instagram\Exception\ChallengeRequiredException.cs" />
+    <Compile Include="Instagram\Exception\AccountCreateSomethingWrongException.cs" />
+    <Compile Include="Instagram\Exception\ConsentRequiredException.cs" />
+    <Compile Include="Instagram\Exception\DeletedContentChallengeException.cs" />
+    <Compile Include="Instagram\Exception\DeletedUserException.cs" />
+    <Compile Include="Instagram\Exception\DirectDeclineRequestException.cs" />
+    <Compile Include="Instagram\Exception\EmailVerificationChallengeException.cs" />
+    <Compile Include="Instagram\Exception\EmptyPostCaptionException.cs" />
+    <Compile Include="Instagram\Exception\EmptySourceException.cs" />
+    <Compile Include="Instagram\Exception\FollowLimitException.cs" />
+    <Compile Include="Instagram\Exception\IgnoreJsonErrorsException.cs" />
+    <Compile Include="Instagram\Exception\InactiveUserException.cs" />
+    <Compile Include="Instagram\Exception\DeviceFormatInvalidException.cs" />
+    <Compile Include="Instagram\Exception\EmailAlreadyUsedException.cs" />
+    <Compile Include="Instagram\Exception\InvalidCredentialsException.cs" />
+    <Compile Include="Instagram\Exception\LoginRequiredException.cs" />
+    <Compile Include="Instagram\Exception\OpenProfileException.cs" />
+    <Compile Include="Instagram\Exception\PhoneVerificationChallengeException.cs" />
+    <Compile Include="Instagram\Exception\AccountCreateFailedLimitException.cs" />
+    <Compile Include="Instagram\Exception\SomethingWrongException.cs" />
+    <Compile Include="Instagram\Exception\SuspendAccountCreatingException.cs" />
+    <Compile Include="Instagram\Exception\SuspendExecutionException.cs" />
+    <Compile Include="Instagram\Exception\SuspendTaskException.cs" />
+    <Compile Include="Instagram\Exception\SuspendThreadWorkException.cs" />
+    <Compile Include="Instagram\Exception\TermsAcceptRequiredException.cs" />
+    <Compile Include="Instagram\Exception\UploadPostFailedException.cs" />
+    <Compile Include="Instagram\Exception\UserNotFoundException.cs" />
+    <Compile Include="Instagram\Exception\LoadingFollowersException.cs" />
+    <Compile Include="Instagram\Exception\VerificationCodeWaitingTimeoutException.cs" />
+    <Compile Include="Instagram\Exception\VerificationServiceErrorLimitException.cs" />
+    <Compile Include="Instagram\Exception\VerificationServiceFailedException.cs" />
+    <Compile Include="Instagram\Exception\VerificationServiceZeroBalanceException.cs" />
+    <Compile Include="Instagram\Instagram.cs" />
+    <Compile Include="Instagram\IResponse.cs" />
+    <Compile Include="Instagram\Request\Account.cs" />
+    <Compile Include="Instagram\Request\Direct.cs" />
+    <Compile Include="Instagram\Request\Discover.cs" />
+    <Compile Include="Instagram\Request\FbSearch.cs" />
+    <Compile Include="Instagram\Request\Feed.cs" />
+    <Compile Include="Instagram\Request\FriendShips.cs" />
+    <Compile Include="Instagram\Request\Highlights.cs" />
+    <Compile Include="Instagram\Request\LiveAction.cs" />
+    <Compile Include="Instagram\Request\Challenge.cs" />
+    <Compile Include="Instagram\Request\Internal.cs" />
+    <Compile Include="Instagram\Request\Media.cs" />
+    <Compile Include="Instagram\Request\Request.cs" />
+    <Compile Include="Instagram\Request\RequestCollection.cs" />
+    <Compile Include="Instagram\Request\Hashtag.cs" />
+    <Compile Include="Instagram\Request\Timeline.cs" />
+    <Compile Include="Instagram\Response\AccountCreateResponse.cs" />
+    <Compile Include="Instagram\Response\ChainingResponse.cs" />
+    <Compile Include="Instagram\Response\CheckEmailResponse.cs" />
+    <Compile Include="Instagram\Response\ConsentResponse.cs" />
+    <Compile Include="Instagram\Response\CreateAccount\SignupConfigResponse.cs" />
+    <Compile Include="Instagram\Response\CreateAccount\UsernameSuggestionResponse.cs" />
+    <Compile Include="Instagram\Response\Direct\AddUsersToConversionResponse.cs" />
+    <Compile Include="Instagram\Response\Direct\DirectLinkItem.cs" />
+    <Compile Include="Instagram\Response\Direct\DirectStoryModel.cs" />
+    <Compile Include="Instagram\Response\Direct\InboxModel.cs" />
+    <Compile Include="Instagram\Response\Direct\InboxResponse.cs" />
+    <Compile Include="Instagram\Response\Direct\LastSeenAtModel.cs" />
+    <Compile Include="Instagram\Response\Direct\PayloadModel.cs" />
+    <Compile Include="Instagram\Response\Direct\SendMessageResponse.cs" />
+    <Compile Include="Instagram\Response\Direct\ThreadItemModel.cs" />
+    <Compile Include="Instagram\Response\Direct\ThreadModel.cs" />
+    <Compile Include="Instagram\Response\Direct\ThreadResponse.cs" />
+    <Compile Include="Instagram\Response\Direct\VisualMediaModel.cs" />
+    <Compile Include="Instagram\Response\Direct\VisualThreadItemsResponse.cs" />
+    <Compile Include="Instagram\Response\FeedTimelineResponse.cs" />
+    <Compile Include="Instagram\Response\FriendshipCreateResponse.cs" />
+    <Compile Include="Instagram\Response\Friendship\FriendshipsResponse.cs" />
+    <Compile Include="Instagram\Response\Friendship\FriendshipUserModel.cs" />
+    <Compile Include="Instagram\Response\HashtagMediaResponse.cs" />
+    <Compile Include="Instagram\Response\HashtagSearchResponse.cs" />
+    <Compile Include="Instagram\Response\LoginResponse.cs" />
+    <Compile Include="Instagram\Response\MediaCommentResponse.cs" />
+    <Compile Include="Instagram\Response\MediaCommentsResponse.cs" />
+    <Compile Include="Instagram\Response\MediaConfigureResponse.cs" />
+    <Compile Include="Instagram\Response\Model\Caption.cs" />
+    <Compile Include="Instagram\Response\Model\Challenge.cs" />
+    <Compile Include="Instagram\Response\ChallengeTypeResponse.cs" />
+    <Compile Include="Instagram\Response\Model\Comment.cs" />
+    <Compile Include="Instagram\Response\Model\MediaItem.cs" />
+    <Compile Include="Instagram\Response\Model\Media.cs" />
+    <Compile Include="Instagram\Response\Model\MediaComment.cs" />
+    <Compile Include="Instagram\Response\Model\User.cs" />
+    <Compile Include="Instagram\Response\Model\UserDirectData.cs" />
+    <Compile Include="Instagram\Response\Stories\HighlightsOwner.cs" />
+    <Compile Include="Instagram\Response\Stories\HighlightsResponse.cs" />
+    <Compile Include="Instagram\Response\Stories\UserStoriesResponse.cs" />
+    <Compile Include="Instagram\Response\ShowManyResponse.cs" />
+    <Compile Include="Instagram\Response\Stories\UserStory.cs" />
+    <Compile Include="Instagram\Response\SuggestedUsersResponse.cs" />
+    <Compile Include="Instagram\Response\TopSearchResponse.cs" />
+    <Compile Include="Instagram\Response\UserFeedResponse.cs" />
+    <Compile Include="Instagram\Response\UserResponse.cs" />
+    <Compile Include="Instagram\Response\TraitResponse.cs" />
+    <Compile Include="Instagram\Settings\Activity.cs" />
+    <Compile Include="Instagram\Settings\ChildAccount.cs" />
+    <Compile Include="Instagram\Settings\LiveSettings.cs" />
+    <Compile Include="Instagram\Settings\Model\Storage.cs" />
+    <Compile Include="Instagram\Settings\NotifierModel.cs" />
+    <Compile Include="Instagram\Settings\Storage.cs" />
+    <Compile Include="Instagram\State.cs" />
+    <Compile Include="Utilities\Log.cs" />
+    <Compile Include="Utilities\MediaObject.cs" />
+    <Compile Include="Utilities\MyExtensions.cs" />
+    <Compile Include="Utilities\Notification.cs" />
+    <Compile Include="Utilities\PemKeyUtils.cs" />
+    <Compile Include="PhoneVerificationWindow.xaml.cs">
+      <DependentUpon>PhoneVerificationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Photo.cs" />
+    <Compile Include="Utilities\Photos.cs" />
+    <Compile Include="Utilities\PostData.cs" />
+    <Compile Include="Utilities\Proxy.cs" />
+    <Compile Include="Resources.Designer.cs" />
+    <Compile Include="Utilities\Serializer.cs" />
+    <Compile Include="Services\AndroidDeviceDisconnectedRepository.cs" />
+    <Compile Include="Services\AndroidDeviceRepository.cs" />
+    <Compile Include="Services\DeviceDataRepository.cs" />
+    <Compile Include="Services\DirectRepository.cs" />
+    <Compile Include="Services\IAndroidDeviceRepository.cs" />
+    <Compile Include="Services\InstagramAppRepository.cs" />
+    <Compile Include="Services\IPhoneVerificationService.cs" />
+    <Compile Include="Services\ManualPhoneVerification.cs" />
+    <Compile Include="Services\MediaTools.cs" />
+    <Compile Include="Services\ParserUsersListRepository.cs" />
+    <Compile Include="Services\PhoneRepository.cs" />
+    <Compile Include="Services\PostRepository.cs" />
+    <Compile Include="Services\SeenStoriesRepository.cs" />
+    <Compile Include="Services\SmsBoostService.cs" />
+    <Compile Include="Services\UserDirectRepository.cs" />
+    <Compile Include="Services\UsersDirectRejectedRepository.cs" />
+    <Compile Include="Services\UsersDirectBlacklistRepository.cs" />
+    <Compile Include="Storage\Model\AdvancedSettings.cs" />
+    <Compile Include="Storage\Model\BasicSettings.cs" />
+    <Compile Include="Storage\Model\DebugSettings.cs" />
+    <Compile Include="Storage\Model\GeneralSettings.cs" />
+    <Compile Include="Storage\Model\HashtagSettings.cs" />
+    <Compile Include="Storage\Model\ImageSettings.cs" />
+    <Compile Include="Storage\Model\InstagramSettings.cs" />
+    <Compile Include="Storage\Model\LimitSettings.cs" />
+    <Compile Include="Storage\Model\PostSettings.cs" />
+    <Compile Include="Storage\Model\ProxySettings.cs" />
+    <Compile Include="Storage\Model\RegisterSettings.cs" />
+    <Compile Include="Storage\Model\TextSettings.cs" />
+    <Compile Include="Storage\Model\UISettings.cs" />
+    <Compile Include="Storage\Model\UserSettings.cs" />
+    <Compile Include="Storage\Settings.cs" />
+    <Compile Include="Tasks\BulkCommenting.cs" />
+    <Compile Include="Tasks\CreateChildAccounts.cs" />
+    <Compile Include="Tasks\Direct.cs" />
+    <Compile Include="Tasks\DirectSender.cs" />
+    <Compile Include="Tasks\FollowSender.cs" />
+    <Compile Include="Tasks\FollowersParser.cs" />
+    <Compile Include="Tasks\Live.cs" />
+    <Compile Include="Tasks\Main.cs" />
+    <Compile Include="Tasks\BulkPosting.cs" />
+    <Compile Include="Tasks\ProfileChecker.cs" />
+    <Compile Include="Tasks\Register.cs" />
+    <Compile Include="Tasks\StoryViewer.cs" />
+    <Compile Include="Tasks\SubTask\AddComment.cs" />
+    <Compile Include="Tasks\SubTask\ChangeProfilePicture.cs" />
+    <Compile Include="Tasks\SubTask\CreateAccount.cs" />
+    <Compile Include="Tasks\SubTask\EditProfile.cs" />
+    <Compile Include="Tasks\SubTask\Follow.cs" />
+    <Compile Include="Tasks\SubTask\FollowUsersList.cs" />
+    <Compile Include="Tasks\SubTask\Like.cs" />
+    <Compile Include="Tasks\SubTask\Login.cs" />
+    <Compile Include="Tasks\SubTask\Post.cs" />
+    <Compile Include="Tasks\SubTask\Profile.cs" />
+    <Compile Include="Tasks\SubTask\Stories.cs" />
+    <Compile Include="Tasks\SubTask\SuggestedFriends.cs" />
+    <Compile Include="Utilities\Telegram.cs" />
+    <Compile Include="UIAccount.cs" />
+    <Compile Include="UIManager.cs" />
+    <Compile Include="Utilities\UserAccount.cs" />
+    <Compile Include="Utilities\RandomUserData.cs" />
+    <Compile Include="Utilities\Utils.cs" />
+    <Compile Include="Variables.cs" />
+    <Compile Include="Utilities\Video.cs" />
+    <Compile Include="Utilities\Work.cs" />
+    <Compile Include="Utilities\Worker.cs" />
+    <Compile Include="xNet\Html.cs" />
+    <Compile Include="xNet\NetException.cs" />
+    <Compile Include="xNet\RequestParams.cs" />
+    <Compile Include="xNet\WinInet.cs" />
+    <Compile Include="xNet\~Http\CookieDictionary.cs" />
+    <Compile Include="xNet\~Http\Http.cs" />
+    <Compile Include="xNet\~Http\HttpException.cs" />
+    <Compile Include="xNet\~Http\HttpExceptionStatus.cs" />
+    <Compile Include="xNet\~Http\HttpHeader.cs" />
+    <Compile Include="xNet\~Http\HttpMethod.cs" />
+    <Compile Include="xNet\~Http\HttpRequest.cs" />
+    <Compile Include="xNet\~Http\HttpResponse.cs" />
+    <Compile Include="xNet\~Http\HttpStatusCode.cs" />
+    <Compile Include="xNet\~Http\~Content\BytesContent.cs" />
+    <Compile Include="xNet\~Http\~Content\FileContent.cs" />
+    <Compile Include="xNet\~Http\~Content\FormUrlEncodedContent.cs" />
+    <Compile Include="xNet\~Http\~Content\HttpContent.cs" />
+    <Compile Include="xNet\~Http\~Content\MultipartContent.cs" />
+    <Compile Include="xNet\~Http\~Content\StreamContent.cs" />
+    <Compile Include="xNet\~Http\~Content\StringContent.cs" />
+    <Compile Include="xNet\~Http\~Misc\DownloadProgressChangedEventArgs.cs" />
+    <Compile Include="xNet\~Http\~Misc\UploadProgressChangedEventArgs.cs" />
+    <Compile Include="xNet\~Internal\ExceptionHelper.cs" />
+    <Compile Include="xNet\~Internal\ProxyHelper.cs" />
+    <Compile Include="xNet\~Internal\SafeNativeMethods.cs" />
+    <Compile Include="xNet\~Proxy\ChainProxyClient.cs" />
+    <Compile Include="xNet\~Proxy\HttpProxyClient.cs" />
+    <Compile Include="xNet\~Proxy\ProxyClient.cs" />
+    <Compile Include="xNet\~Proxy\ProxyException.cs" />
+    <Compile Include="xNet\~Proxy\ProxyType.cs" />
+    <Compile Include="xNet\~Proxy\Socks4aProxyClient.cs" />
+    <Compile Include="xNet\~Proxy\Socks4ProxyClient.cs" />
+    <Compile Include="xNet\~Proxy\Socks5ProxyClient.cs" />
+    <Page Include="EmailVerificationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PhoneVerificationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\profilePhoto.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AutoGram.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Instagram\Response\Model\Discover\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Database\Database.csproj">
+      <Project>{f357dc44-1c9f-4f30-93de-f3f226381db6}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.11\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.11\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.11\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.11\build\net35\SQLitePCLRaw.lib.e_sqlite3.linux.targets'))" />
+    <Error Condition="!Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.11\build\net35\SQLitePCLRaw.lib.e_sqlite3.osx.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.11\build\net35\SQLitePCLRaw.lib.e_sqlite3.osx.targets'))" />
+    <Error Condition="!Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.11\build\net35\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.11\build\net35\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets'))" />
+  </Target>
+  <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.11\build\net35\SQLitePCLRaw.lib.e_sqlite3.osx.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.osx.1.1.11\build\net35\SQLitePCLRaw.lib.e_sqlite3.osx.targets')" />
+  <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.11\build\net35\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.v110_xp.1.1.11\build\net35\SQLitePCLRaw.lib.e_sqlite3.v110_xp.targets')" />
+</Project>
